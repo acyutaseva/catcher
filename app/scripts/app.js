@@ -10,13 +10,14 @@ app.config(['$routeProvider', function($routeProvider){
 
   $routeProvider
     .when('/', { templateUrl: 'views/main.html', controller: 'MainCtrl' })
+    .when('/info', { templateUrl: 'views/info.html', controller: 'MainCtrl' })
     .when('/email/:itemId', { templateUrl: 'views/item.html', controller: 'ItemCtrl' })
     .otherwise({ redirectTo: '/' });
 
 }]);
 
 app.run(['$rootScope', function($rootScope){
-  
+
   // Connect Socket.io
   var socket = io({
     path: location.pathname + 'socket.io'
@@ -29,7 +30,7 @@ app.run(['$rootScope', function($rootScope){
   socket.on('deleteMail', function(data) {
     $rootScope.$emit('deleteMail', data);
   });
-  
+
   $rootScope.$on('Refresh', function() {
     console.log('Refresh event called.');
   });
@@ -41,7 +42,7 @@ app.run(['$rootScope', function($rootScope){
  */
 
 app.filter('newLines', function() {
-  
+
   return function(text) {
     return text && text.replace(/\n/g, '<br>') || '';
   };

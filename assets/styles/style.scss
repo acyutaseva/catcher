@@ -15,9 +15,9 @@
  * Variables
  */
 
-$brand:             rgb(73, 148, 206);
+$brand:             rgb(8, 172, 105);
 $brandLight:        lighten($brand, 20);
-$brandLighter:      lighten($brand, 40);
+$brandLighter:      lighten($brand, 60);
 $brandDark:         darken($brand, 20);
 
 
@@ -387,4 +387,3 @@ code {
   color: white;
   padding-top: 3px;
 }
-
