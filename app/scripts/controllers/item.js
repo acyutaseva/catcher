@@ -10,26 +10,26 @@ app.controller('ItemCtrl', [
 
     var iframe = null;
 
-    // Get the item data by route parameter
-    var getItem = function() {
-
-      Email.get({ id: $routeParams.itemId }, function(email) {
-
-        $scope.item = new Email(email);
-        $scope.rawEmail = 'email/' + $scope.item.id + '/source';
-
-        if ($scope.item.html) {
-          $scope.item.iframeUrl = 'email/' + $scope.item.id + '/html';
-          prepIframe();
-          $scope.panelVisibility = 'html';
-        } else {
-          $scope.htmlView = 'disabled';
-          $scope.panelVisibility = 'plain';
-        }
-      }, function(error) {
-        console.error('404: Email not found');
-        $location.path('/');
+    // Updates all media query rules to use 'width' instead of device width
+    var replaceMediaQueries = function(){
+      angular.forEach(iframe.contentDocument.styleSheets, function(styleSheet){
+        angular.forEach(styleSheet.cssRules, function(rule){
+          if (rule.media && rule.media.mediaText){
+            // TODO -- Add future warning if email doesn't use '[max|min]-device-width' media queries
+            rule.media.mediaText = rule.media.mediaText.replace('device-width', 'width');
+          }
+        });
       });
+    };
+
+    // Updates the iframe height so it matches it's content
+    // This prevents the iframe from having scrollbars
+    var fixIframeHeight = function() {
+
+      var body      = iframe.contentDocument.getElementsByTagName('body')[0];
+      var newHeight = body.scrollHeight;
+
+      iframe.height = newHeight;
     };
 
     // Prepares the iframe for interaction
@@ -56,25 +56,25 @@ app.controller('ItemCtrl', [
       }, 500);
     };
 
-    // Updates the iframe height so it matches it's content
-    // This prevents the iframe from having scrollbars
-    var fixIframeHeight = function() {
+    // Get the item data by route parameter
+    var getItem = function() {
 
-      var body      = iframe.contentDocument.getElementsByTagName('body')[0];
-      var newHeight = body.scrollHeight;
+      Email.get({ id: $routeParams.itemId }, function(email) {
 
-      iframe.height = newHeight;
-    };
+        $scope.item = new Email(email);
+        $scope.rawEmail = 'email/' + $scope.item.id + '/source';
 
-    // Updates all media query rules to use 'width' instead of device width
-    var replaceMediaQueries = function(){
-      angular.forEach(iframe.contentDocument.styleSheets, function(styleSheet){
-        angular.forEach(styleSheet.cssRules, function(rule){
-          if (rule.media && rule.media.mediaText){
-            // TODO -- Add future warning if email doesn't use '[max|min]-device-width' media queries
-            rule.media.mediaText = rule.media.mediaText.replace('device-width', 'width');
-          }
-        });
+        if ($scope.item.html) {
+          $scope.item.iframeUrl = 'email/' + $scope.item.id + '/html';
+          prepIframe();
+          $scope.panelVisibility = 'html';
+        } else {
+          $scope.htmlView = 'disabled';
+          $scope.panelVisibility = 'plain';
+        }
+      }, function(error) {
+        console.error('404: Email not found');
+        $location.path('/');
       });
     };
 
@@ -131,7 +131,7 @@ app.controller('ItemCtrl', [
 
       var lastRelayTo = $cookies.relayTo;
 
-      var relayTo = prompt("Please enter email address to relay", lastRelayTo);
+      var relayTo = window.prompt('Please enter email address to relay', lastRelayTo);
 
       if (relayTo){
         if (validateEmail(relayTo)){
