@@ -41,7 +41,7 @@
 
 <div class="email-content webpush-content">
     <div ng-hide=" panelVisibility != 'json' ">
-      LE JSON
+      <pre>{{payload | json}}</pre>
     </div>
 
     <div ng-hide=" panelVisibility != 'desktop' " class="desktop">
@@ -59,7 +59,13 @@
       </div>
     </div>
 
-    <div ng-hide=" panelVisibility != 'mobile' " class="xxx">
-      LA V MOBILE
+    <div ng-hide=" panelVisibility != 'mobile' " class="mobile">
+      <div class="marvel-device nexus5">
+        <div class="top-bar"></div>
+        <div class="sleep"></div>
+        <div class="volume"></div>
+        <div class="camera"></div>
+        <div class="screen">{{payload.content}}</div>
+      </div>
     </div>
 </div>
