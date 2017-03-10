@@ -39,16 +39,27 @@
   </li>
 </ul>
 
-<div class="email-content">
-    <div class="panel-attachments" ng-hide=" panelVisibility != 'json' ">
+<div class="email-content webpush-content">
+    <div ng-hide=" panelVisibility != 'json' ">
       LE JSON
     </div>
 
-    <div class="panel-attachments" ng-hide=" panelVisibility != 'desktop' ">
-      LA V DESKTOP
+    <div ng-hide=" panelVisibility != 'desktop' " class="desktop">
+      <div class="push">
+        <div class="webpush">
+          <div class="image"></div>
+          <div class="body">
+            <div class="title">
+              <span id="push-payload-title">{{payload.title}}</span>
+              <i class="fa fa-close"></i>
+            </div>
+            <div class="content" id="push-payload-content">{{payload.content}}</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="panel-attachments" ng-hide=" panelVisibility != 'mobile' ">
+    <div ng-hide=" panelVisibility != 'mobile' " class="xxx">
       LA V MOBILE
     </div>
 </div>
