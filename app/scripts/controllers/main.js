@@ -40,7 +40,8 @@ app.controller('MainCtrl', [
 
     var refreshTimeout = null;
     $rootScope.$on('newMail', function(e, newEmail) {
-      
+      console.log(newEmail);
+
       //update model
       $scope.items.push(newEmail);
       countUnread();
@@ -57,7 +58,7 @@ app.controller('MainCtrl', [
       }
 
     });
-    
+
     $rootScope.$on('deleteMail', function(e, email) {
       if (email.id === 'all') {
         $rootScope.$emit('Refresh');
@@ -71,11 +72,13 @@ app.controller('MainCtrl', [
         var nextIdx = $scope.items.length === 1 ? null :
                       idx === 0 ? idx + 1 : idx - 1;
         if (nextIdx !== null) {
-          $location.path('/email/' + $scope.items[nextIdx].id);
+          const itemType = ($scope.items[nextIdx].headers && $scope.items[nextIdx].headers['x-type']) || 'email';
+          console.log(itemType);
+          $location.path('/' + itemType + '/' + $scope.items[nextIdx].id);
         } else {
           $location.path('/');
         }
-        
+
         $scope.items.splice(idx, 1);
         countUnread();
         $scope.$apply();
@@ -91,7 +94,7 @@ app.controller('MainCtrl', [
     $scope.showConfig = function(){
       $scope.configOpen = !$scope.configOpen;
     };
-    
+
     $scope.toggleAutoShow = function() {
       $scope.autoShow = !$scope.autoShow;
     };
@@ -115,7 +118,7 @@ app.controller('MainCtrl', [
 app.controller('NavCtrl', [
   '$scope', '$rootScope', '$location', 'Email',
   function($scope, $rootScope, $location, Email) {
-  
+
     $scope.refreshList = function() {
       $rootScope.$emit('Refresh');
     };
