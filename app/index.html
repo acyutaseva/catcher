@@ -38,7 +38,7 @@
                     <ul class="email-list">
                         <li ng-repeat="item in items | orderBy:'time':!reverse | filter: search " class="ng-cloak">
 
-                            <a href="#/email/{{item.id}}" class="email-item email-{{item.id}}" ng-class="{current: item.id === currentItemId}" ng-click="markRead(item)">
+                            <a href="#/{{item.headers['x-type'] || 'email'}}/{{item.id}}" class="email-item email-{{item.id}}" ng-class="{current: item.id === currentItemId}" ng-click="markRead(item)">
                                 <div class="email-sum-type">
                                   <i ng-class="{
                                     'fa': true,
@@ -121,6 +121,7 @@
         <script src="scripts/services.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/item.js"></script>
+        <script src="scripts/controllers/webpush.js"></script>
 
     </body>
 </html>

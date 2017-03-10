@@ -64,7 +64,8 @@ var messages = [
     subject: '[webpush] push title',
     headers: {
       'X-type': 'webpush',
-      'X-to': '-'
+      'X-to': 'authtoken',
+      'X-payload': '{"title":"Hello title","content":"Hello content"}'
     },
     text: '-'
   },
