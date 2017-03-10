@@ -25,11 +25,28 @@ app.controller('WebpushCtrl', [
       });
     };
 
+    function preview() {
+      console.log($scope.payload);
+      new Notification($scope.payload.title, {
+        body: $scope.payload.content
+      })
+    }
+
+    function play() {
+      const perm = Notification.permission;
+      if (perm === 'denied') {
+        alert('You must unlock Notification on Chrome Settings (!! not working on private navigation)');
+      } else if (perm === 'granted') {
+        preview();
+      } else {
+        Notification.requestPermission().then(play);
+      }
+    }
+
+    $scope.play = play;
 
     // Toggle what format is viewable
     $scope.show = function(type) {
-      if ((type === 'html' || type === 'attachments') && !$scope.item[type]) return;
-
       $scope.panelVisibility = type;
     };
 

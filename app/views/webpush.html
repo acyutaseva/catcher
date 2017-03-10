@@ -1,20 +1,54 @@
 <ul class="toolbar email-toolbar on-light">
-    <li>
-        <a href="" class=""
-          ng-click="delete(item)">
-            <i class="fa fa-trash-o"></i>
-            Delete
-        </a>
-    </li>
+  <li>
+    <a href="" class=""
+      ng-click="show('desktop')"
+      ng-class="{ active: panelVisibility == 'desktop' }">
+        <i class="fa fa-desktop"></i>
+        Desktop
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="show('mobile')"
+      ng-class="{ active: panelVisibility == 'mobile' }">
+        <i class="fa fa-mobile"></i>
+        Mobile
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="show('json')"
+      ng-class="{ active: panelVisibility == 'json' }">
+        <i class="fa fa-code"></i>
+        Source
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="play()">
+        <i class="fa fa-play"></i>
+        Play
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="delete(item)">
+        <i class="fa fa-trash-o"></i>
+        Delete
+    </a>
+  </li>
 </ul>
 
 <div class="email-content">
-
     <div class="panel-attachments" ng-hide=" panelVisibility != 'json' ">
       LE JSON
     </div>
 
     <div class="panel-attachments" ng-hide=" panelVisibility != 'desktop' ">
       LA V DESKTOP
+    </div>
+
+    <div class="panel-attachments" ng-hide=" panelVisibility != 'mobile' ">
+      LA V MOBILE
     </div>
 </div>
