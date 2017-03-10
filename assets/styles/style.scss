@@ -137,8 +137,8 @@ a:focus {
 }
 
 .email-item {
-    display: block;
-    padding: 0.6em 1em 1em; //0.6 to offset the line height of the email title
+    display: flex;
+    padding: 1em 0.6em 1em 0; //0.6 to offset the line height of the email title
 
     background-color: $greyXLight;
     border-bottom: 1px solid $greyLight;
@@ -172,6 +172,18 @@ a:focus {
 
     @media (max-width: 800px) {
         .subline-time { display: none; }
+    }
+
+    .email-sum-type {
+      color: #444;
+      display: flex;
+      width: 42px;
+      justify-content: center;
+      align-items: center;
+
+      .fa, .material-icons {
+        font-size: 30px;
+      }
     }
 }
 

@@ -7,6 +7,8 @@
         <meta name="description" content="Web Interface for viewing and testing notifications during development.">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="styles/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="shortcut icon" href="/favicon.ico"/>
     </head>
     <body>
 
@@ -37,15 +39,27 @@
                         <li ng-repeat="item in items | orderBy:'time':!reverse | filter: search " class="ng-cloak">
 
                             <a href="#/email/{{item.id}}" class="email-item email-{{item.id}}" ng-class="{current: item.id === currentItemId}" ng-click="markRead(item)">
-                                <span class="title">
-                                    {{item.subject}}
-                                    <i class="fa fa-paperclip" ng-hide="!item.attachments"></i>
-                                    <i class="fa fa-circle unread-icon" ng-hide="item.read"></i>
-                                </span>
-                                <span class="subline clearfix">
-                                    <span class="subline-from">{{item.to.0.address}}</span>
-                                    <span class="subline-time">{{item.time | date:'short' }}</span>
-                                </span>
+                                <div class="email-sum-type">
+                                  <i ng-class="{
+                                    'fa': true,
+                                    'fa-facebook-square': item.headers['x-type'] == 'fbpage',
+                                    'fa-chrome': item.headers['x-type'] == 'webpush'
+                                  }" aria-hidden="true"></i>
+                                  <i class="material-icons" ng-show="item.headers['x-type'] == 'sms'">sms</i>
+                                  <i class="material-icons" ng-show="!item.headers['x-type']">mail</i>
+                                </div>
+                                <div style="flex:1;">
+                                  <span class="title">
+                                      <span>{{item.subject}}</span>
+                                      <i class="fa fa-paperclip" ng-hide="!item.attachments"></i>
+                                      <i class="fa fa-circle unread-icon" ng-hide="item.read"></i>
+                                  </span>
+                                  <span class="subline clearfix">
+                                      <span class="subline-from" ng-hide="item.headers['x-to']">{{item.to.0.address}}</span>
+                                      <span class="subline-from" ng-show="item.headers['x-to']">{{item.headers['x-to']}}</span>
+                                      <span class="subline-time">{{item.time | date:'short' }}</span>
+                                  </span>
+                                </div>
                             </a>
 
                         </li>

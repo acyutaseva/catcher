@@ -49,6 +49,11 @@ app.filter('newLines', function() {
 
 });
 
+app.filter('debug', () => (e) => {
+  console.log(e);
+  return  '';
+});
+
 /**
  * Sidebar scrollbar fixed height
  */

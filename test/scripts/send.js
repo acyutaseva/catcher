@@ -34,6 +34,41 @@ var messages = [
     ]
   },
 
+  {
+    from: '-',
+    to: '1000239092@fb.me',
+    subject: 'This is a push',
+    headers: {
+      'X-type': 'fbpage'
+    },
+    text: 'The wax at the bank was surfer wax!!!',
+    html: '<!DOCTYPE html><html><head></head><body>' +
+          '<p>The wax at the bank was surfer wax!!!</p>' +
+          '</body></html>'
+  },
+
+  {
+    from: '-',
+    to: '0670123456@fb.me',
+    subject: 'SMS T',
+    headers: {
+      'X-type': 'sms',
+      'X-to': '06 70 12 34 56'
+    },
+    text: 'The wax at the bank was surfer wax!!!'
+  },
+
+  {
+    from: 'notif.me',
+    to: 'xxx@browser.io',
+    subject: '[webpush] push title',
+    headers: {
+      'X-type': 'webpush',
+      'X-to': '-'
+    },
+    text: '-'
+  },
+
   // Plain text email
   {
     from: 'Johnny Utah <johnny.utah@fbi.gov>',
@@ -85,7 +120,7 @@ function sendEmails(logErrors) {
 }
 
 // Run once if called directly, otherwise export
-if (require.main === module) 
+if (require.main === module)
   sendEmails(true);
 else
   module.exports = sendEmails;

@@ -85,8 +85,6 @@
       </li>
       </ul>
     </li>
-
-
     <li>
         <a href="" class=""
           ng-click="show('attachments')"
@@ -100,28 +98,6 @@
           ng-click="delete(item)">
             <i class="fa fa-trash-o"></i>
             Delete
-        </a>
-    </li>
-    <li>
-        <a href="" class=""
-          ng-click="relay(item)"
-          ng-class="{ disabled: !config.isOutgoingEnabled }">
-            <i class="fa fa-cloud-upload"></i>
-            Relay
-        </a>
-    </li>
-    <li>
-        <a href="" class=""
-           ng-click="relayTo(item)"
-           ng-class="{ disabled: !config.isOutgoingEnabled }">
-            <i class="fa fa-share"></i>
-            Relay to
-        </a>
-    </li>
-    <li>
-        <a href="email/{{item.id}}/download" class="">
-            <i class="fa fa-cloud-download"></i>
-            Download EML
         </a>
     </li>
 </ul>
