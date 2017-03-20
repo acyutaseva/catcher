@@ -39,12 +39,10 @@ var messages = [
     to: '1000239092@fb.me',
     subject: 'This is a push',
     headers: {
-      'X-type': 'fbpage'
-    },
-    text: 'The wax at the bank was surfer wax!!!',
-    html: '<!DOCTYPE html><html><head></head><body>' +
-          '<p>The wax at the bank was surfer wax!!!</p>' +
-          '</body></html>'
+      'X-type': 'fbpage',
+      'X-app': '{"name": "MyApp", "letter": "M"}',
+      'X-payload': '{"text":"This is a text message"}'
+    }
   },
 
   {

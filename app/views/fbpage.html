@@ -1,0 +1,55 @@
+<ul class="toolbar email-toolbar on-light">
+  <li>
+    <a href="" class=""
+      ng-click="show('mobile')"
+      ng-class="{ active: panelVisibility == 'mobile' }">
+        <i class="fa fa-mobile"></i>
+        Mobile
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="show('json')"
+      ng-class="{ active: panelVisibility == 'json' }">
+        <i class="fa fa-code"></i>
+        Source
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="delete(item)">
+        <i class="fa fa-trash-o"></i>
+        Delete
+    </a>
+  </li>
+</ul>
+
+<div class="email-content fbpage-content">
+    <div ng-hide=" panelVisibility != 'json' ">
+      <pre>{{payload | json}}</pre>
+    </div>
+
+    <div ng-hide=" panelVisibility != 'mobile' " class="mobile">
+      <div class="marvel-device nexus5">
+        <div class="top-bar"></div>
+        <div class="sleep"></div>
+        <div class="volume"></div>
+        <div class="camera"></div>
+        <div class="screen">
+          <header>
+            {{app.name}} FB Page
+          </header>
+          <section>
+            <div class="col1">
+              <div class="avatar">{{app.letter}}</div>
+            </div>
+            <div class="col2">
+              <div class="text">
+                {{payload.text}}
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+</div>
