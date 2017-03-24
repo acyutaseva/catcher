@@ -177,14 +177,15 @@ a:focus {
     }
 
     .email-sum-type {
-      color: #444;
+      color: #888;
       display: flex;
       width: 42px;
+      padding-right: 3px;
       justify-content: center;
       align-items: center;
 
       .fa, .material-icons {
-        font-size: 30px;
+        font-size: 28px;
       }
     }
 }
