@@ -55,7 +55,7 @@ module.exports = function (grunt) {
           '<%= path.app %>/styles/style.css': '<%= path.assets %>/styles/style.scss'
         },
         options: {
-          outputStyle: 'compressed'
+          outputStyle: 'compact'
         }
       }
     },

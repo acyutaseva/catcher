@@ -26,10 +26,10 @@ app.controller('WebpushCtrl', [
     };
 
     function preview() {
-      console.log($scope.payload);
-      new Notification($scope.payload.title, {
-        body: $scope.payload.content
-      })
+      navigator.serviceWorker.register('sw.js');
+      navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification($scope.payload.title, $scope.payload);
+      });
     }
 
     function play() {

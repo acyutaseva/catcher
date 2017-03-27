@@ -47,14 +47,22 @@
     <div ng-hide=" panelVisibility != 'desktop' " class="desktop">
       <div class="push">
         <div class="webpush">
-          <div class="image"></div>
-          <div class="body">
-            <div class="title">
-              <span id="push-payload-title">{{payload.title}}</span>
-              <i class="fa fa-close"></i>
+          <div class="main">
+            <div class="img-css" style="background-image: url({{payload.icon}});"></div>
+            <div class="body">
+              <div class="title">
+                <span id="push-payload-title">{{payload.title}}</span>
+                <i class="fa fa-close"></i>
+              </div>
+              <div class="content" id="push-payload-content">{{payload.body}}</div>
             </div>
-            <div class="content" id="push-payload-content">{{payload.content}}</div>
           </div>
+          <footer>
+            <div class="action" ng-repeat="action in payload.actions">
+              <div style="background-image: url({{action.icon}});" class="img-css" ng-show="{{action.icon}}"></div>
+              <span class="title">{{action.title}}</span>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
@@ -65,7 +73,7 @@
         <div class="sleep"></div>
         <div class="volume"></div>
         <div class="camera"></div>
-        <div class="screen">{{payload.content}}</div>
+        <div class="screen">{{payload.body}}</div>
       </div>
     </div>
 </div>

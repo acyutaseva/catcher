@@ -63,7 +63,20 @@ var messages = [
     headers: {
       'X-type': 'webpush',
       'X-to': 'authtoken',
-      'X-payload': '{"title":"Hello title","content":"Hello content"}'
+      'X-payload': JSON.stringify({
+        title: 'Hello !',
+        body: 'This is a notification body, Great ?',
+        icon: 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/ios7-bell.png',
+        actions: [{
+      		action: "yes",
+      		title: "yes",
+          icon: "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/thumbsup.png"
+      	},
+        {
+          action: "no",
+          title: "no"
+        }]
+      })
     },
     text: '-'
   },
