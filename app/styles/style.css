@@ -1631,9 +1631,9 @@ a:focus { outline: none; }
 
 @media (max-width: 800px) { .email-item .subline-time { display: none; } }
 
-.email-item .email-sum-type { color: #444; display: flex; width: 42px; justify-content: center; align-items: center; }
+.email-item .email-sum-type { color: #888; display: flex; width: 42px; padding-right: 3px; justify-content: center; align-items: center; }
 
-.email-item .email-sum-type .fa, .email-item .email-sum-type .material-icons { font-size: 30px; }
+.email-item .email-sum-type .fa, .email-item .email-sum-type .material-icons { font-size: 28px; }
 
 .email-container { display: flex; flex-direction: column; flex: 1; }
 
