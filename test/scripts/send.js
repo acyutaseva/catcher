@@ -14,9 +14,106 @@ var transporter = nodemailer.createTransport({
   ignoreTLS: true
 });
 
+const webpushes = {
+  'simple': {
+    title: 'Title',
+    body: 'just a simple body'
+  },
+  'actions': {
+    title: 'Hello !',
+    body: 'There are actions here',
+    actions: [{
+      action: "yes",
+      title: "yes",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/thumbsup.png"
+    },
+    {
+      action: "no",
+      title: "no"
+    }]
+  },
+  'image 400x240': {
+    title: 'Hello !',
+    body: 'Only image here',
+    image: 'https://fakeimg.pl/400x240/'
+  },
+  'image 80x380': {
+    title: 'Hello !',
+    body: 'Only image here',
+    image: 'https://fakeimg.pl/80x380/'
+  },
+  'image 380x80': {
+    title: 'Hello !',
+    body: 'Only image here',
+    image: 'https://fakeimg.pl/380x80/'
+  },
+  'image 16x16': {
+    title: 'Hello !',
+    body: 'Only image here',
+    image: 'https://fakeimg.pl/16x16/'
+  },
+  'image + actions': {
+    title: 'Hello !',
+    body: 'image + actions',
+    image: 'https://fakeimg.pl/400x240/',
+    actions: [{
+      action: "yes",
+      title: "yes",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/thumbsup.png"
+    },
+    {
+      action: "no",
+      title: "no"
+    }]
+  },
+  'icon': {
+    title: 'Hello !',
+    body: 'Only icon',
+    icon: 'https://fakeimg.pl/100x100/'
+  },
+  'badge': {
+    title: 'Hello !',
+    body: 'Only badge',
+    badge: 'https://fakeimg.pl/80x80/'
+  },
+  'icon + badge': {
+    title: 'Hello !',
+    body: 'icon + badge',
+    icon: 'https://fakeimg.pl/100x100/',
+    badge: 'https://fakeimg.pl/80x80/'
+  },
+  'all': {
+    title: 'Hello !',
+    body: 'all * !',
+    image: 'https://fakeimg.pl/400x240/',
+    actions: [{
+      action: "yes",
+      title: "yes",
+      icon: "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/thumbsup.png"
+    },
+    {
+      action: "no",
+      title: "no"
+    }],
+    icon: 'https://fakeimg.pl/100x100/',
+    badge: 'https://fakeimg.pl/80x80/'
+  }
+};
+
+
+const webpushesMessages = Object.keys(webpushes).map((wk) => ({
+  from: 'notif.me',
+  to: 'xxx@browser.io',
+  subject: '[webpush] ' + wk,
+  headers: {
+    'X-type': 'webpush',
+    'X-to': 'authtoken',
+    'X-payload': JSON.stringify(webpushes[wk])
+  },
+  text: '-'
+}));
 // Messages list
 var messages = [
-
   // Email w/ simple attachment and basic header
   {
     from: 'Angelo Pappas <angelo.pappas@fbi.gov>',
@@ -56,31 +153,6 @@ var messages = [
     text: 'The wax at the bank was surfer wax!!!'
   },
 
-  {
-    from: 'notif.me',
-    to: 'xxx@browser.io',
-    subject: '[webpush] push title',
-    headers: {
-      'X-type': 'webpush',
-      'X-to': 'authtoken',
-      'X-payload': JSON.stringify({
-        title: 'Hello !',
-        body: 'This is a notification body, Great ?',
-        icon: 'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/ios7-bell.png',
-        actions: [{
-      		action: "yes",
-      		title: "yes",
-          icon: "https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/thumbsup.png"
-      	},
-        {
-          action: "no",
-          title: "no"
-        }]
-      })
-    },
-    text: '-'
-  },
-
   // Plain text email
   {
     from: 'Johnny Utah <johnny.utah@fbi.gov>',
@@ -118,7 +190,7 @@ var messages = [
     ]
   }
 
-];
+].concat(webpushesMessages);
 
 
 function sendEmails(logErrors) {
