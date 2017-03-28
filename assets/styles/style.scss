@@ -446,6 +446,14 @@ code {
         background-repeat: no-repeat;
       }
 
+      .image {
+        padding: 10px;
+
+        .img-css {
+          height: 222px;
+        }
+      }
+
       footer {
         .action {
           border-top: 1px solid rgb(236,236,236);

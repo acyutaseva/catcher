@@ -1729,6 +1729,10 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 
 .webpush-content .desktop .webpush .img-css { background-size: contain; background-position: center; background-repeat: no-repeat; }
 
+.webpush-content .desktop .webpush .image { padding: 10px; }
+
+.webpush-content .desktop .webpush .image .img-css { height: 222px; }
+
 .webpush-content .desktop .webpush footer .action { border-top: 1px solid #ececec; padding: 12px 0; display: flex; align-items: center; }
 
 .webpush-content .desktop .webpush footer .action .title { padding-left: 17px; line-height: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 210px; }

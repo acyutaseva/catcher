@@ -57,9 +57,13 @@
               <div class="content" id="push-payload-content">{{payload.body}}</div>
             </div>
           </div>
+          <div class="image" ng-show="!!payload.image">
+            <div class="img-css" style="background-image: url('{{payload.image}}');"></div>
+          </div>
           <footer>
             <div class="action" ng-repeat="action in payload.actions">
-              <div style="background-image: url('{{action.icon}}');" class="img-css" ng-show="{{!!action.icon}}"></div>
+              <div style="background-image: url('{{action.icon}}');" class="img-css"
+                ng-show="!!action.icon"></div>
               <span class="title">{{action.title}}</span>
             </div>
           </footer>
