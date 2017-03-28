@@ -41,14 +41,14 @@
 
 <div class="email-content webpush-content">
     <div ng-hide=" panelVisibility != 'json' ">
-      <pre>{{payload | json}}</pre>
+      <pre>{{payloadSrc | json}}</pre>
     </div>
 
     <div ng-hide=" panelVisibility != 'desktop' " class="desktop">
       <div class="push">
         <div class="webpush">
           <div class="main">
-            <div class="img-css" style="background-image: url({{payload.icon}});"></div>
+            <div class="img-css" style="background-image: url('{{payload.icon}}');"></div>
             <div class="body">
               <div class="title">
                 <span id="push-payload-title">{{payload.title}}</span>
@@ -59,7 +59,7 @@
           </div>
           <footer>
             <div class="action" ng-repeat="action in payload.actions">
-              <div style="background-image: url({{action.icon}});" class="img-css" ng-show="{{action.icon}}"></div>
+              <div style="background-image: url('{{action.icon}}');" class="img-css" ng-show="{{!!action.icon}}"></div>
               <span class="title">{{action.title}}</span>
             </div>
           </footer>

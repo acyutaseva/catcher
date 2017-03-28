@@ -17,7 +17,14 @@ app.controller('WebpushCtrl', [
 
         console.log(email);
         $scope.item = email;
-        $scope.payload = JSON.parse(email.headers['x-payload']);
+        $scope.payloadSrc = JSON.parse(email.headers['x-payload']);
+        $scope.payload = Object.assign({}, {
+          data: {
+            events: email.headers['x-events'] ? JSON.parse(email.headers['x-events']) : {},
+            payload: $scope.payloadSrc
+          }
+        }, $scope.payloadSrc);
+        if ($scope.payload.data.events.open) fetch($scope.payload.data.events.open);
 
       }, function(error) {
         console.error('404: Email not found');
