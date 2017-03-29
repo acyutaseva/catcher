@@ -9,6 +9,7 @@
   </li>
   <li>
     <a href="" class=""
+      ng-hide="true"
       ng-click="show('mobile')"
       ng-class="{ active: panelVisibility == 'mobile' }">
         <i class="fa fa-mobile"></i>
@@ -46,7 +47,7 @@
 
     <div ng-hide=" panelVisibility != 'desktop' " class="desktop">
       <div class="push">
-        <div class="webpush">
+        <div ng-class="{ chrome: true, 'with-image': !!payload.image }">
           <div class="main">
             <div class="img-css" style="background-image: url('{{payload.icon}}');"></div>
             <div class="body">
@@ -67,6 +68,18 @@
               <span class="title">{{action.title}}</span>
             </div>
           </footer>
+        </div>
+
+        <div ng-class="{ firefox: true, 'with-icon': !!payload.icon }">
+          <div class="logo"><i class="fa-firefox fa"></i></div>
+          <div class="main">
+            <div class="title">{{payload.title}}</div>
+            <div class="via">via ----</div>
+            <div class="body">{{payload.body}}</div>
+          </div>
+          <div class="icon">
+            <div class="img-css" style="background-image: url('{{payload.icon}}');"></div>
+          </div>
         </div>
       </div>
     </div>

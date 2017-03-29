@@ -426,6 +426,7 @@ code {
       display: flex;
       flex: 1;
       align-items: center;
+      flex-direction: column;
     }
   }
 
@@ -434,17 +435,71 @@ code {
   }
 
   .desktop {
-    padding-top: 100px;
+    padding-top: 50px;
     font-size: 12px;
-    .webpush {
+
+    .img-css {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .firefox {
+      margin-top: 50px;
+      display: flex;
+      background-color: #ebebeb;
+      box-shadow: 2px 2px 10px 0 #656565;
+      border-radius: 8px;
+      width: 345px;
+      height: 65px;
+      align-items: center;
+      font-size: 12px;
+
+      .icon {
+        display: none;
+      }
+
+      &.with-icon .icon {
+        display: block;
+        padding: 0 10px;
+        width: 43px;
+        height: 43px;
+
+        .img-css {
+          width: 43px;
+          height: 43px;
+        }
+      }
+
+      .logo {
+        font-size: 30px;
+        padding: 0 10px;
+      }
+
+      .title {
+        font-weight: bold;
+      }
+
+      .via {
+        font-weight: bold;
+      }
+
+      .body, .title {
+        flex: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 295px;
+      }
+
+      &.with-icon .body, &.with-icon .title {
+        width: 230px;
+      }
+    }
+
+    .chrome {
       width: 360px;
       box-shadow: 2px 2px 10px 0 #656565;
-
-      .img-css {
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
 
       .image {
         padding: 10px;
@@ -519,8 +574,18 @@ code {
             overflow: hidden;
             text-overflow: ellipsis;
             margin-top: 5px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            max-height: 54px;
+            line-height: 18px;
           }
         }
+      }
+
+      &.with-image .main .body .content {
+        -webkit-line-clamp: 1;
+        max-height: 18px;
       }
     }
   }

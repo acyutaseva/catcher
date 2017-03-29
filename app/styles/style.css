@@ -1719,39 +1719,59 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 
 .webpush-content .desktop, .webpush-content .mobile { display: flex; flex-direction: column; align-items: center; flex: 1; }
 
-.webpush-content .desktop .push, .webpush-content .mobile .push { display: flex; flex: 1; align-items: center; }
+.webpush-content .desktop .push, .webpush-content .mobile .push { display: flex; flex: 1; align-items: center; flex-direction: column; }
 
 .webpush-content .mobile { transform: scale(0.8); }
 
-.webpush-content .desktop { padding-top: 100px; font-size: 12px; }
+.webpush-content .desktop { padding-top: 50px; font-size: 12px; }
 
-.webpush-content .desktop .webpush { width: 360px; box-shadow: 2px 2px 10px 0 #656565; }
+.webpush-content .desktop .img-css { background-size: contain; background-position: center; background-repeat: no-repeat; }
 
-.webpush-content .desktop .webpush .img-css { background-size: contain; background-position: center; background-repeat: no-repeat; }
+.webpush-content .desktop .firefox { margin-top: 50px; display: flex; background-color: #ebebeb; box-shadow: 2px 2px 10px 0 #656565; border-radius: 8px; width: 345px; height: 65px; align-items: center; font-size: 12px; }
 
-.webpush-content .desktop .webpush .image { padding: 10px; }
+.webpush-content .desktop .firefox .icon { display: none; }
 
-.webpush-content .desktop .webpush .image .img-css { height: 222px; }
+.webpush-content .desktop .firefox.with-icon .icon { display: block; padding: 0 10px; width: 43px; height: 43px; }
 
-.webpush-content .desktop .webpush footer .action { border-top: 1px solid #ececec; padding: 12px 0; display: flex; align-items: center; }
+.webpush-content .desktop .firefox.with-icon .icon .img-css { width: 43px; height: 43px; }
 
-.webpush-content .desktop .webpush footer .action .title { padding-left: 17px; line-height: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 210px; }
+.webpush-content .desktop .firefox .logo { font-size: 30px; padding: 0 10px; }
 
-.webpush-content .desktop .webpush footer .action .img-css { width: 16px; height: 16px; margin-left: 17px; }
+.webpush-content .desktop .firefox .title { font-weight: bold; }
 
-.webpush-content .desktop .webpush .main { min-height: 85px; display: flex; }
+.webpush-content .desktop .firefox .via { font-weight: bold; }
 
-.webpush-content .desktop .webpush .main .img-css { width: 85px; height: 85px; }
+.webpush-content .desktop .firefox .body, .webpush-content .desktop .firefox .title { flex: 1; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; max-width: 295px; }
 
-.webpush-content .desktop .webpush .main .body { overflow: hidden; flex: 1; padding: 10px 20px; }
+.webpush-content .desktop .firefox.with-icon .body, .webpush-content .desktop .firefox.with-icon .title { width: 230px; }
 
-.webpush-content .desktop .webpush .main .body .title { display: flex; justify-content: space-between; }
+.webpush-content .desktop .chrome { width: 360px; box-shadow: 2px 2px 10px 0 #656565; }
 
-.webpush-content .desktop .webpush .main .body .title span { font-size: 14px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis; line-height: 18px; max-height: 36px; }
+.webpush-content .desktop .chrome .image { padding: 10px; }
 
-.webpush-content .desktop .webpush .main .body .title .fa-close { color: #666; margin-right: -15px; margin-top: -5px; font-size: 14px; }
+.webpush-content .desktop .chrome .image .img-css { height: 222px; }
 
-.webpush-content .desktop .webpush .main .body .content { overflow: hidden; text-overflow: ellipsis; margin-top: 5px; }
+.webpush-content .desktop .chrome footer .action { border-top: 1px solid #ececec; padding: 12px 0; display: flex; align-items: center; }
+
+.webpush-content .desktop .chrome footer .action .title { padding-left: 17px; line-height: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 210px; }
+
+.webpush-content .desktop .chrome footer .action .img-css { width: 16px; height: 16px; margin-left: 17px; }
+
+.webpush-content .desktop .chrome .main { min-height: 85px; display: flex; }
+
+.webpush-content .desktop .chrome .main .img-css { width: 85px; height: 85px; }
+
+.webpush-content .desktop .chrome .main .body { overflow: hidden; flex: 1; padding: 10px 20px; }
+
+.webpush-content .desktop .chrome .main .body .title { display: flex; justify-content: space-between; }
+
+.webpush-content .desktop .chrome .main .body .title span { font-size: 14px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-overflow: ellipsis; line-height: 18px; max-height: 36px; }
+
+.webpush-content .desktop .chrome .main .body .title .fa-close { color: #666; margin-right: -15px; margin-top: -5px; font-size: 14px; }
+
+.webpush-content .desktop .chrome .main .body .content { overflow: hidden; text-overflow: ellipsis; margin-top: 5px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; max-height: 54px; line-height: 18px; }
+
+.webpush-content .desktop .chrome.with-image .main .body .content { -webkit-line-clamp: 1; max-height: 18px; }
 
 .fbpage-content .marvel-device.nexus5 { height: 500px; }
 
