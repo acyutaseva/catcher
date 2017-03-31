@@ -24,7 +24,7 @@ app.controller('WebpushCtrl', [
             payload: $scope.payloadSrc
           }
         }, $scope.payloadSrc);
-        if ($scope.payload.data.events.open) fetch($scope.payload.data.events.open);
+        if ($scope.payload.data.events.open) fetch($scope.payload.data.events.open, {method: 'POST'});
 
       }, function(error) {
         console.error('404: Email not found');

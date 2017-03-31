@@ -3,7 +3,7 @@
 
 function sendEvent(notification, name) {
   const events = notification.data.events;
-  if (events[name]) return fetch(events[name]);
+  if (events[name]) return fetch(events[name], {method: 'POST'});
 }
 
 function onNotificationClose(event) {
