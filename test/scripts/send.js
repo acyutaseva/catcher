@@ -100,7 +100,6 @@ const webpushes = {
   }
 };
 
-
 const webpushesMessages = Object.keys(webpushes).map((wk) => ({
   from: 'notif.me',
   to: 'xxx@browser.io',
@@ -109,6 +108,60 @@ const webpushesMessages = Object.keys(webpushes).map((wk) => ({
     'X-type': 'webpush',
     'X-to': 'authtoken',
     'X-payload': JSON.stringify(webpushes[wk])
+  },
+  text: '-'
+}));
+
+const fbpages = {
+  'text': {
+    message: {
+      text: 'Hello this is a simple text'
+    }
+  },
+  'long text': {
+    message: {
+      text: 'Hello this is a long text, Hello this is a long text, Hello this is a long text, Hello this is a long text'
+    }
+  },
+  'generic one element': {
+    message: {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'generic',
+          elements: [{
+            title: '75010 - 2160€ - 75m² - 3p.',
+            default_action:{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=default_action'
+            },
+            image_url: 'https://fakeimg.pl/800x800/',
+            subtitle: 'Meublé - Loué par une agence',
+            buttons:[{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=button',
+              title: 'See on Google'
+            }, {
+              type: 'postback',
+              title: 'Add to favorite',
+              payload: 'addFavorite_123'
+            }]
+          }]
+        }
+      }
+    }
+  }
+};
+
+const fbpagesMessages =  Object.keys(fbpages).map((fk) => ({
+  from: 'notif.me',
+  to: 'xxx@fb.io',
+  subject: '[fbpage] ' + fk,
+  headers: {
+    'X-type': 'fbpage',
+    'X-to': 'fbpsid',
+    'X-app': JSON.stringify({ "endpoint": "fb.notif.me", "name": "Catcher", "letter": "C" }),
+    'X-payload': JSON.stringify(fbpages[fk])
   },
   text: '-'
 }));
@@ -129,17 +182,6 @@ var messages = [
     attachments: [
       { fileName: 'notes.txt', content: 'Info on surf board wax', contentType: 'text/plain' }
     ]
-  },
-
-  {
-    from: '-',
-    to: '1000239092@fb.me',
-    subject: 'This is a push',
-    headers: {
-      'X-type': 'fbpage',
-      'X-app': '{"name": "MyApp", "letter": "M"}',
-      'X-payload': '{"text":"This is a text message"}'
-    }
   },
 
   {
@@ -190,7 +232,7 @@ var messages = [
     ]
   }
 
-].concat(webpushesMessages);
+].concat(fbpagesMessages);
 
 
 function sendEmails(logErrors) {

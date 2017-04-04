@@ -410,6 +410,12 @@ code {
 }
 
 // webpush
+.img-css {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .webpush-content {
   .marvel-device.nexus5 {
     height: 468px;
@@ -437,12 +443,6 @@ code {
   .desktop {
     padding-top: 50px;
     font-size: 12px;
-
-    .img-css {
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
 
     .firefox {
       margin-top: 50px;
@@ -593,7 +593,8 @@ code {
 
 .fbpage-content {
   .marvel-device.nexus5 {
-    height: 500px;
+    height: 580px;
+    width: 350px;
   }
 
   .mobile {
@@ -623,30 +624,81 @@ code {
     }
 
     section {
-      background: snow;
+      background: #fafafa;
       flex: 1;
       box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
       display: flex;
       flex-direction: row;
       align-items: flex-end;
+      font-size: 15px;
 
       .col1 {
         padding: 10px;
       }
 
       .col2 {
+        padding: 10px 41px 10px 0;
+        display: flex;
         flex: 1;
-        padding: 10px 10px 10px 0;
+      }
+
+      .content {
+        border-radius: 15px;
+        color: black;
+        text-align: left;
+        text-rendering: optimizeLegibility;
+        line-height: 1.28;
+      }
+
+      .template {
+        border: 2px solid #f3f3f3;
+        background: white;
+        flex: 1;
+        font-size: 13px;
+
+        .element {
+          display: flex;
+          flex-direction: column;
+
+          .txt {
+            padding: 11px 12px 0 12px;
+            line-height: 8px;
+          }
+
+          .title {
+            font-weight: bold;
+          }
+
+          .subtitle {
+            font-size: 11px;
+            color: #8f8f8f;
+          }
+
+          .url {
+            font-size: 11px;
+            color: #c6c6c6;
+          }
+
+          .button {
+            color: dodgerblue;
+            text-align: right;
+            padding: 15px 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 13px;
+          }
+
+          .img-css {
+            height: 132px;
+            background-size: cover;
+            border-radius: 15px 15px 0 0;
+          }
+        }
       }
 
       .text {
         background: #eaeaea;
         padding: 10px;
-        color: black;
-        border-radius: 10px;
-        text-align: left;
-        text-rendering: optimizeLegibility;
-        line-height: 1.28;
       }
 
       .avatar {

@@ -1715,6 +1715,8 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 
 .autoshow-toggle { float: right; cursor: pointer; color: white; padding-top: 3px; }
 
+.img-css { background-size: contain; background-position: center; background-repeat: no-repeat; }
+
 .webpush-content .marvel-device.nexus5 { height: 468px; }
 
 .webpush-content .desktop, .webpush-content .mobile { display: flex; flex-direction: column; align-items: center; flex: 1; }
@@ -1724,8 +1726,6 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 .webpush-content .mobile { transform: scale(0.8); }
 
 .webpush-content .desktop { padding-top: 50px; font-size: 12px; }
-
-.webpush-content .desktop .img-css { background-size: contain; background-position: center; background-repeat: no-repeat; }
 
 .webpush-content .desktop .firefox { margin-top: 50px; display: flex; background-color: #ebebeb; box-shadow: 2px 2px 10px 0 #656565; border-radius: 8px; width: 345px; height: 65px; align-items: center; font-size: 12px; }
 
@@ -1773,7 +1773,7 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 
 .webpush-content .desktop .chrome.with-image .main .body .content { -webkit-line-clamp: 1; max-height: 18px; }
 
-.fbpage-content .marvel-device.nexus5 { height: 500px; }
+.fbpage-content .marvel-device.nexus5 { height: 580px; width: 350px; }
 
 .fbpage-content .mobile { display: flex; flex-direction: column; align-items: center; flex: 1; padding-top: 20px; }
 
@@ -1783,12 +1783,30 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 
 .fbpage-content .marvel-device > .screen header::first-letter { text-transform: capitalize; }
 
-.fbpage-content .marvel-device > .screen section { background: snow; flex: 1; box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4); display: flex; flex-direction: row; align-items: flex-end; }
+.fbpage-content .marvel-device > .screen section { background: #fafafa; flex: 1; box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4); display: flex; flex-direction: row; align-items: flex-end; font-size: 15px; }
 
 .fbpage-content .marvel-device > .screen section .col1 { padding: 10px; }
 
-.fbpage-content .marvel-device > .screen section .col2 { flex: 1; padding: 10px 10px 10px 0; }
+.fbpage-content .marvel-device > .screen section .col2 { padding: 10px 41px 10px 0; display: flex; flex: 1; }
 
-.fbpage-content .marvel-device > .screen section .text { background: #eaeaea; padding: 10px; color: black; border-radius: 10px; text-align: left; text-rendering: optimizeLegibility; line-height: 1.28; }
+.fbpage-content .marvel-device > .screen section .content { border-radius: 15px; color: black; text-align: left; text-rendering: optimizeLegibility; line-height: 1.28; }
+
+.fbpage-content .marvel-device > .screen section .template { border: 2px solid #f3f3f3; background: white; flex: 1; font-size: 13px; }
+
+.fbpage-content .marvel-device > .screen section .template .element { display: flex; flex-direction: column; }
+
+.fbpage-content .marvel-device > .screen section .template .element .txt { padding: 11px 12px 0 12px; line-height: 8px; }
+
+.fbpage-content .marvel-device > .screen section .template .element .title { font-weight: bold; }
+
+.fbpage-content .marvel-device > .screen section .template .element .subtitle { font-size: 11px; color: #8f8f8f; }
+
+.fbpage-content .marvel-device > .screen section .template .element .url { font-size: 11px; color: #c6c6c6; }
+
+.fbpage-content .marvel-device > .screen section .template .element .button { color: dodgerblue; text-align: right; padding: 15px 12px; text-transform: uppercase; font-weight: bold; font-size: 13px; }
+
+.fbpage-content .marvel-device > .screen section .template .element .img-css { height: 132px; background-size: cover; border-radius: 15px 15px 0 0; }
+
+.fbpage-content .marvel-device > .screen section .text { background: #eaeaea; padding: 10px; }
 
 .fbpage-content .marvel-device > .screen section .avatar { text-transform: capitalize; color: white; background-color: dodgerblue; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; border-radius: 50%; height: 40px; width: 40px; }

@@ -56,6 +56,8 @@ app.filter('debug', () => (e) => {
   return  '';
 });
 
+app.filter('url_hostname', () => (e) => (new URL(e)).hostname);
+
 /**
  * Sidebar scrollbar fixed height
  */

@@ -44,8 +44,23 @@
               <div class="avatar">{{app.letter}}</div>
             </div>
             <div class="col2">
-              <div class="text">
-                {{payload.text}}
+              <div class="content text" ng-show="displayType === 'text'">
+                {{payload.message.text}}
+              </div>
+              <div class="content text" ng-show="displayType === 'unknown'">
+                Sorry :(. We are not able to display a preview. Check the source. Unknown template type
+              </div>
+              <div class="content template" ng-show="displayType === 'template_generic'">
+                <div class="element" ng-repeat="element in payload.message.attachment.payload.elements">
+                  <div style="background-image: url('{{element.image_url}}');" class="img-css"
+                    ng-show="!!element.image_url"></div>
+                  <span class="txt title">{{element.title}}</span>
+                  <span class="txt subtitle">{{element.subtitle}}</span>
+                  <span class="txt url">{{element.default_action.url | url_hostname}}</span>
+                  <span class="button" ng-repeat="button in element.buttons">
+                    {{button.title}}
+                  </span>
+                </div>
               </div>
             </div>
           </section>

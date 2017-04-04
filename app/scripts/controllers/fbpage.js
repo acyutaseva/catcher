@@ -6,15 +6,31 @@ app.controller('FbpageCtrl', [
 
     $scope.panelVisibility = 'mobile';
 
+    const getPayloadType = (p) => {
+      if (p.message) {
+        if (p.message.text) return 'text';
+
+        if (p.message.attachment && p.message.attachment.type == 'template') {
+          const types = {
+            'generic': 'template_generic'
+          }
+          const type = types[p.message.attachment.payload.template_type];
+          if (type) return type;
+        }
+      }
+
+      return 'unknown';
+    }
+
     // Get the item data by route parameter
     var getItem = function() {
 
       Email.get({ id: $routeParams.itemId }, function(email) {
 
-        console.log(email);
         $scope.item = email;
         $scope.payload = JSON.parse(email.headers['x-payload']);
         $scope.app = JSON.parse(email.headers['x-app']);
+        $scope.displayType = getPayloadType($scope.payload);
 
       }, function(error) {
         console.error('404: Email not found');
