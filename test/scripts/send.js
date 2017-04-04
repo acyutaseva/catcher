@@ -136,7 +136,71 @@ const fbpages = {
               url: 'http://www.google.com/?t=default_action'
             },
             image_url: 'https://fakeimg.pl/800x800/',
-            subtitle: 'Meublé - Loué par une agence',
+            subtitle: 'This is a subtitle',
+            buttons:[{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=button',
+              title: 'See on Google'
+            }, {
+              type: 'postback',
+              title: 'Add to favorite',
+              payload: 'addFavorite_123'
+            }]
+          }]
+        }
+      }
+    }
+  },
+  'generic 3 element': {
+    message: {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'generic',
+          elements: [{
+            title: '75010 - 2160€ - 75m² - 3p.',
+            default_action:{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=default_action'
+            },
+            image_url: 'https://fakeimg.pl/800x800/',
+            subtitle: 'This is a subtitle',
+            buttons:[{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=button',
+              title: 'See on Google'
+            }, {
+              type: 'postback',
+              title: 'Add to favorite',
+              payload: 'addFavorite_123'
+            }]
+          },
+          {
+            title: 'second element',
+            default_action:{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=default_action'
+            },
+            image_url: 'https://fakeimg.pl/100x200/',
+            subtitle: 'This is a subtitle',
+            buttons:[{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=button',
+              title: 'See on Google'
+            }, {
+              type: 'postback',
+              title: 'Add to favorite',
+              payload: 'addFavorite_123'
+            }]
+          },
+          {
+            title: 'The last but not the least',
+            default_action:{
+              type: 'web_url',
+              url: 'http://www.google.com/?t=default_action'
+            },
+            image_url: 'https://fakeimg.pl/200x100/',
+            subtitle: 'This is a subtitle',
             buttons:[{
               type: 'web_url',
               url: 'http://www.google.com/?t=button',
