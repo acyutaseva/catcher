@@ -44,11 +44,20 @@
               <div class="avatar">{{app.letter}}</div>
             </div>
             <div class="col2">
+              <div class="content text" ng-show="displayType === 'unknown'">
+                Sorry :(. We are not able to display a preview. Check the source. Unknown template type
+              </div>
               <div class="content text" ng-show="displayType === 'text'">
                 {{payload.message.text}}
               </div>
-              <div class="content text" ng-show="displayType === 'unknown'">
-                Sorry :(. We are not able to display a preview. Check the source. Unknown template type
+              <div class="content image" ng-show="displayType === 'image'">
+                <img ng-src="{{payload.message.attachment.payload.url}}" />
+              </div>
+              <div class="content audio" ng-show="displayType === 'audio'">
+                <audio controls ng-src="{{getPayloadUrl()}}"></audio>
+              </div>
+              <div class="content video" ng-show="displayType === 'video'">
+                <video controls ng-src="{{getPayloadUrl()}}"></video>
               </div>
               <div class="content template" ng-show="displayType === 'template_generic'">
                 <div class="element" ng-repeat="element in payload.message.attachment.payload.elements">

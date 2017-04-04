@@ -646,7 +646,6 @@ code {
       }
 
       .content {
-        border-radius: 15px;
         color: black;
         text-align: left;
         text-rendering: optimizeLegibility;
@@ -732,6 +731,30 @@ code {
         background: #eaeaea;
         padding: 10px;
         max-width: 227px;
+        border-radius: 15px;
+      }
+
+      .image {
+        border: 1px solid gray;
+        border-radius: 15px;
+        overflow: hidden;
+
+        img {
+          max-height: 247px;
+          max-width: 247px;
+        }
+      }
+
+      .audio {
+        audio {
+          width: 247px;
+        }
+      }
+
+      .video {
+        video {
+          width: 247px;
+        }
       }
 
       .avatar {
