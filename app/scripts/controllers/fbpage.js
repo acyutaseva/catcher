@@ -15,7 +15,8 @@ app.controller('FbpageCtrl', [
 
         if (p.message.attachment && p.message.attachment.type == 'template') {
           const types = {
-            'generic': 'template_generic'
+            'generic': 'template_generic',
+            'button': 'template_button'
           }
           const type = types[p.message.attachment.payload.template_type];
           if (type) return type;

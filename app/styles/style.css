@@ -1817,6 +1817,8 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 
 .fbpage-content .marvel-device > .screen section .template .element .img-css { height: 132px; background-size: cover; }
 
+.fbpage-content .marvel-device > .screen section .template .element .text-block { background: #eaeaea; padding: 10px; border-radius: 15px 15px 0 0; }
+
 .fbpage-content .marvel-device > .screen section .text { background: #eaeaea; padding: 10px; max-width: 227px; border-radius: 15px; }
 
 .fbpage-content .marvel-device > .screen section .image { border: 1px solid gray; border-radius: 15px; overflow: hidden; }

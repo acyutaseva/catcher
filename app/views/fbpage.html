@@ -71,6 +71,14 @@
                   </span>
                 </div>
               </div>
+              <div class="content template" ng-show="displayType === 'template_button'">
+                <div class="element">
+                  <span class="text-block">{{payload.message.attachment.payload.text}}</span>
+                  <span class="button" ng-repeat="button in payload.message.attachment.payload.buttons">
+                    {{button.title}}
+                  </span>
+                </div>
+              </div>
             </div>
           </section>
         </div>
