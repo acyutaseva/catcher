@@ -623,6 +623,46 @@ code {
       }
     }
 
+    footer {
+      display: flex;
+      flex-direction: row;
+      background: #fafafa;
+      color: dodgerblue;
+      padding: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+
+      .row {
+        display: flex;
+        margin: auto;
+      }
+
+      .reply {
+        border-radius: 15px;
+        border: 1px solid dodgerblue;
+        padding: 3px;
+        margin-right: 6px;
+        display: flex;
+        align-items: center;
+
+        .title {
+          padding: 0 9px;
+          line-height: 24px;
+        }
+
+        .icon {
+          display: block;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          color: white;
+          font-size: 15px;
+          line-height: 24px;
+          background: dodgerblue;
+        }
+      }
+    }
+
     section {
       background: #fafafa;
       flex: 1;

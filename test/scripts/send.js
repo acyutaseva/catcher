@@ -288,6 +288,40 @@ const fbpages = {
         }
       }
     }
+  },
+  'quick replies (1)': {
+    message: {
+      text: "What's your favorite movie genre?",
+      quick_replies: [
+        {
+          content_type: 'location'
+        }
+      ]
+    }
+  },
+  'quick replies (long)': {
+    message: {
+      text: "What's your favorite movie genre?",
+      quick_replies: [
+        {
+          content_type:"text",
+          title: 'Action',
+          payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_ACTION'
+        },
+        {
+          content_type: 'text',
+          title: 'This is a very very very very long text',
+          image_url: 'https://fakeimg.pl/24x24/',
+          payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY'
+        },
+        {
+          content_type: 'text',
+          title: 'Comedy',
+          image_url: 'https://fakeimg.pl/24x24/',
+          payload: 'DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_COMEDY7'
+        }
+      ]
+    }
   }
 };
 

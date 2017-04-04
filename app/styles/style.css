@@ -1783,6 +1783,16 @@ code { background-color: #fafafa; border: 1px solid gainsboro; padding: 0.1em 0.
 
 .fbpage-content .marvel-device > .screen header::first-letter { text-transform: capitalize; }
 
+.fbpage-content .marvel-device > .screen footer { display: flex; flex-direction: row; background: #fafafa; color: dodgerblue; padding: 10px; overflow-x: auto; white-space: nowrap; }
+
+.fbpage-content .marvel-device > .screen footer .row { display: flex; margin: auto; }
+
+.fbpage-content .marvel-device > .screen footer .reply { border-radius: 15px; border: 1px solid dodgerblue; padding: 3px; margin-right: 6px; display: flex; align-items: center; }
+
+.fbpage-content .marvel-device > .screen footer .reply .title { padding: 0 9px; line-height: 24px; }
+
+.fbpage-content .marvel-device > .screen footer .reply .icon { display: block; width: 24px; height: 24px; border-radius: 50%; color: white; font-size: 15px; line-height: 24px; background: dodgerblue; }
+
 .fbpage-content .marvel-device > .screen section { background: #fafafa; flex: 1; box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4); display: flex; flex-direction: row; align-items: flex-end; font-size: 15px; }
 
 .fbpage-content .marvel-device > .screen section .col1 { padding: 10px; }

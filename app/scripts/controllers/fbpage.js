@@ -6,7 +6,10 @@ app.controller('FbpageCtrl', [
 
     $scope.panelVisibility = 'mobile';
     $scope.getPayloadUrl = function() {
-      return $scope.payload ? $sce.trustAsResourceUrl($scope.payload.message.attachment.payload.url) : null;
+      return ($scope.payload
+        && $scope.payload.message
+        && $scope.payload.message.attachment
+        && $scope.payload.message.attachment.payload ) ? $sce.trustAsResourceUrl($scope.payload.message.attachment.payload.url) : null;
     };
 
     const getPayloadType = (p) => {

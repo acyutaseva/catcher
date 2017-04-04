@@ -81,6 +81,16 @@
               </div>
             </div>
           </section>
+          <footer ng-show="!!payload.message.quick_replies">
+            <div class="row">
+              <div class="reply" ng-repeat="reply in payload.message.quick_replies">
+                <i ng-show="reply.content_type === 'location'" class="icon fa fa-map-marker"></i>
+                <i ng-show="!!reply.image_url" style="background-image: url('{{reply.image_url}}');" class="img-css icon"></i>
+                <span ng-show="reply.content_type === 'text'" class="title">{{reply.title}}</span>
+                <span ng-show="reply.content_type === 'location'" class="title">Send Location</span>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
