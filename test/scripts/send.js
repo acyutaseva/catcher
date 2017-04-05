@@ -404,7 +404,9 @@ var messages = [
     ]
   }
 
-].concat(fbpagesMessages);
+]
+.concat(webpushesMessages)
+.concat(fbpagesMessages);
 
 
 function sendEmails(logErrors) {
