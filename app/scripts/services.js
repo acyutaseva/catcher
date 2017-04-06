@@ -15,11 +15,11 @@ app.service('Email', ['$resource', function($resource) {
 
   Email.read = function(id, cb) {
     return Email.get({id: id}, (email) => {
-      const events = email.headers['x-events'] ? JSON.parse(email.headers['x-events']) : {}
+      const events = email.headers['x-events'] ? JSON.parse(email.headers['x-events']) : {};
       if (events.open) fetch(events.open, {method: 'POST'});
       cb(email);
-    })
-  }
+    });
+  };
 
   return Email;
 

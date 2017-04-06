@@ -6,32 +6,30 @@ app.controller('FbpageCtrl', [
 
     $scope.panelVisibility = 'mobile';
     $scope.getPayloadUrl = function() {
-      return ($scope.payload
-        && $scope.payload.message
-        && $scope.payload.message.attachment
-        && $scope.payload.message.attachment.payload ) ? $sce.trustAsResourceUrl($scope.payload.message.attachment.payload.url) : null;
+      return ($scope.payload && $scope.payload.message && $scope.payload.message.attachment && $scope.payload.message.attachment.payload) ?
+        $sce.trustAsResourceUrl($scope.payload.message.attachment.payload.url) : null;
     };
 
     const getPayloadType = (p) => {
       if (p.message) {
         if (p.message.text) return 'text';
 
-        if (p.message.attachment && p.message.attachment.type == 'template') {
+        if (p.message.attachment && p.message.attachment.type === 'template') {
           const types = {
             'generic': 'template_generic',
             'button': 'template_button'
-          }
-          const type = types[p.message.attachment.payload.template_type];
+          };
+          const type = types[p.message.attachment.payload.template_type]; // jshint ignore:line
           if (type) return type;
         }
 
-        if (p.message.attachment && p.message.attachment.type == 'image') return 'image';
-        if (p.message.attachment && p.message.attachment.type == 'audio') return 'audio';
-        if (p.message.attachment && p.message.attachment.type == 'video') return 'video';
+        if (p.message.attachment && p.message.attachment.type === 'image') return 'image';
+        if (p.message.attachment && p.message.attachment.type === 'audio') return 'audio';
+        if (p.message.attachment && p.message.attachment.type === 'video') return 'video';
       }
 
       return 'unknown';
-    }
+    };
 
     // Get the item data by route parameter
     var getItem = function() {

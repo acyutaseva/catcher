@@ -40,7 +40,7 @@ app.controller('WebpushCtrl', [
     function play() {
       const perm = Notification.permission;
       if (perm === 'denied') {
-        alert('You must unlock Notification on Chrome Settings (!! not working on private navigation)');
+        window.alert('You must unlock Notification on Chrome Settings (!! not working on private navigation)');
       } else if (perm === 'granted') {
         preview();
       } else {
