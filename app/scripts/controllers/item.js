@@ -59,7 +59,7 @@ app.controller('ItemCtrl', [
     // Get the item data by route parameter
     var getItem = function() {
 
-      Email.get({ id: $routeParams.itemId }, function(email) {
+      Email.read($routeParams.itemId, function(email) {
 
         $scope.item = new Email(email);
         $scope.rawEmail = 'email/' + $scope.item.id + '/source';

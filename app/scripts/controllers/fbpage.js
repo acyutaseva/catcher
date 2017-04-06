@@ -36,7 +36,7 @@ app.controller('FbpageCtrl', [
     // Get the item data by route parameter
     var getItem = function() {
 
-      Email.get({ id: $routeParams.itemId }, function(email) {
+      Email.read($routeParams.itemId, function(email) {
 
         $scope.item = email;
         $scope.payload = JSON.parse(email.headers['x-payload']);
@@ -48,13 +48,6 @@ app.controller('FbpageCtrl', [
         $location.path('/');
       });
     };
-
-    function preview() {
-      console.log($scope.payload);
-      new Notification($scope.payload.title, {
-        body: $scope.payload.content
-      })
-    }
 
     // Toggle what format is viewable
     $scope.show = function(type) {

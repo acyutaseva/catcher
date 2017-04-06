@@ -40,8 +40,6 @@ app.controller('MainCtrl', [
 
     var refreshTimeout = null;
     $rootScope.$on('newMail', function(e, newEmail) {
-      console.log(newEmail);
-
       //update model
       $scope.items.push(newEmail);
       countUnread();
@@ -73,7 +71,6 @@ app.controller('MainCtrl', [
                       idx === 0 ? idx + 1 : idx - 1;
         if (nextIdx !== null) {
           const itemType = ($scope.items[nextIdx].headers && $scope.items[nextIdx].headers['x-type']) || 'email';
-          console.log(itemType);
           $location.path('/' + itemType + '/' + $scope.items[nextIdx].id);
         } else {
           $location.path('/');

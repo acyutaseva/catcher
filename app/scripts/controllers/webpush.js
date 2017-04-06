@@ -13,9 +13,8 @@ app.controller('WebpushCtrl', [
     // Get the item data by route parameter
     var getItem = function() {
 
-      Email.get({ id: $routeParams.itemId }, function(email) {
+      Email.read($routeParams.itemId, function(email) {
 
-        console.log(email);
         $scope.item = email;
         $scope.payloadSrc = JSON.parse(email.headers['x-payload']);
         $scope.payload = Object.assign({}, {
@@ -24,7 +23,6 @@ app.controller('WebpushCtrl', [
             payload: $scope.payloadSrc
           }
         }, $scope.payloadSrc);
-        if ($scope.payload.data.events.open) fetch($scope.payload.data.events.open, {method: 'POST'});
 
       }, function(error) {
         console.error('404: Email not found');
