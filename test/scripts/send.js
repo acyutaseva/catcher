@@ -20,7 +20,7 @@ const webpushes = {
     body: 'just a simple body'
   },
   'actions': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'There are actions here',
     actions: [{
       action: "yes",
@@ -33,27 +33,27 @@ const webpushes = {
     }]
   },
   'image 400x240': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'Only image here',
     image: 'https://fakeimg.pl/400x240/'
   },
   'image 80x380': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'Only image here',
     image: 'https://fakeimg.pl/80x380/'
   },
   'image 380x80': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'Only image here',
     image: 'https://fakeimg.pl/380x80/'
   },
   'image 16x16': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'Only image here',
     image: 'https://fakeimg.pl/16x16/'
   },
   'image + actions': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'image + actions',
     image: 'https://fakeimg.pl/400x240/',
     actions: [{
@@ -67,24 +67,24 @@ const webpushes = {
     }]
   },
   'icon': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'Only icon',
     icon: 'https://fakeimg.pl/100x100/'
   },
   'badge': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'Only badge',
     badge: 'https://fakeimg.pl/80x80/'
   },
   'icon + badge': {
-    title: 'Hello !',
+    title: 'Hello!',
     body: 'icon + badge',
     icon: 'https://fakeimg.pl/100x100/',
     badge: 'https://fakeimg.pl/80x80/'
   },
   'all': {
-    title: 'Hello !',
-    body: 'all * !',
+    title: 'Hello!',
+    body: 'all *!',
     image: 'https://fakeimg.pl/400x240/',
     actions: [{
       action: "yes",
