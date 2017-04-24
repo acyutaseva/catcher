@@ -9,7 +9,6 @@ app.controller('MainCtrl', [
   function($scope, $rootScope, $http, Email, $route, $location) {
 
     $scope.items = [];
-    $scope.configOpen = false;
     $scope.currentItemId = null;
     $scope.autoShow = false;
     $scope.unreadItems = 0;
@@ -86,10 +85,6 @@ app.controller('MainCtrl', [
     $scope.markRead = function(email) {
       email.read = true;
       countUnread();
-    };
-
-    $scope.showConfig = function(){
-      $scope.configOpen = !$scope.configOpen;
     };
 
     $scope.toggleAutoShow = function() {

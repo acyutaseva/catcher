@@ -3,17 +3,13 @@
   "description": "Web Interface for reading and testing notifications during development",
   "version": "0.15.0",
   "keywords": [
+    "notification",
     "email",
-    "e-mail",
-    "mail",
-    "mailcatcher"
-  ],
-  "author": "Dan Farrelly",
-  "maintainers": [
-    {
-      "name": "Dan Farrelly",
-      "email": "daniel.j.farrelly@gmail.com"
-    }
+    "webpush",
+    "sms",
+    "facebook",
+    "notification testing",
+    "notification catcher"
   ],
   "repository": {
     "type": "git",
