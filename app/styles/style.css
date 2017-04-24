@@ -1597,7 +1597,7 @@ a:focus { outline: none; }
 
 .sidebar { -webkit-box-flex: 1 30%; -moz-box-flex: 1 30%; -webkit-flex: 1 30%; -ms-flex: 1 30%; flex: 1 30%; max-width: 26em; height: 100%; background-color: #fafafa; }
 
-.main-container { -webkit-box-flex: 1 70%; -moz-box-flex: 1 70%; -webkit-flex: 1 70%; -ms-flex: 1 70%; flex: 1 70%; display: flex; flex-direction: column; overflow-y: scroll; }
+.main-container { -webkit-box-flex: 1 70%; -moz-box-flex: 1 70%; -webkit-flex: 1 70%; -ms-flex: 1 70%; flex: 1 70%; display: flex; flex-direction: column; overflow-y: auto; }
 
 .sidebar-header { position: absolute; top: 0; left: 0; width: 30%; max-width: 26em; min-height: 5.6em; background-color: #08ac69; }
 
@@ -1646,6 +1646,12 @@ a:focus { outline: none; }
 .main-content a, .main-content a:visited { color: #08ac69; }
 
 .main-content a:hover { color: #07945a; }
+
+.homepage { height: 100%; }
+
+.homepage .logo { height: 70%; display: flex; justify-content: center; align-items: center; }
+
+.homepage .logo i { font-size: 200px; padding: 20px; color: #888; border: 5px solid #777; border-radius: 30px 3px 30px 50px; opacity: 0.3; }
 
 /** Re-usable UI elements */
 .toolbar { margin: 0; padding: 0.2em 0; height: 2.4em; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-flow: row nowrap; -webkit-align-items: center; align-items: center; list-style: none; font-size: 14px; }
