@@ -1,7 +1,7 @@
 {
   "name": "notification-catcher",
   "description": "Web Interface for reading and testing notifications during development",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "keywords": [
     "notification",
     "email",
