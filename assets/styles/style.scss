@@ -416,7 +416,7 @@ code {
 }
 
 .preview-iframe {
-    border:0; width:100%; min-height:600px;
+    border:0; width:100%; min-height:600px; height:100%;
     position: relative; // set position for resize rendering issue
 }
 
