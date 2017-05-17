@@ -1,7 +1,7 @@
 {
   "name": "notification-catcher",
   "description": "Web Interface for reading and testing notifications during development",
-  "version": "0.15.3",
+  "version": "1.0.1",
   "keywords": [
     "notification",
     "email",
@@ -9,7 +9,14 @@
     "sms",
     "facebook",
     "notification testing",
-    "notification catcher"
+    "notification catcher",
+    "e-mail",
+    "mail",
+    "maildev",
+    "mailcatcher",
+    "testing",
+    "development",
+    "smtp"
   ],
   "repository": {
     "type": "git",
@@ -17,8 +24,11 @@
   },
   "scripts": {
     "build": "grunt build",
-    "dev": "grunt dev",
-    "test": "./node_modules/.bin/istanbul cover _mocha"
+    "test": "standard && istanbul cover _mocha",
+    "lint": "standard",
+    "dev": "node ./scripts/dev.js & npm run css-watch",
+    "css": "node-sass --output-style compressed -o app/styles assets/styles/style.scss",
+    "css-watch": "node-sass -wr --output-style compressed -o app/styles assets/styles/style.scss"
   },
   "main": "./index.js",
   "bin": {
@@ -29,15 +39,16 @@
     "async": "1.5.1",
     "commander": "2.9.0",
     "express": "4.13.4",
-    "mailparser": "0.5.3",
+    "mailparser": "0.6.2",
     "open": "0.0.5",
-    "simplesmtp": "0.3.35",
     "smtp-connection": "2.3.1",
-    "smtp-server": "1.4.0",
-    "socket.io": "1.4.5",
+    "smtp-server": "1.16.1",
+    "socket.io": "1.7.3",
     "wildstring": "1.0.8"
   },
   "devDependencies": {
+    "expect": "1.20.2",
+    "got": "^6.7.1",
     "grunt": "0.4.5",
     "grunt-cli": "^1.2.0",
     "grunt-concurrent": "2.2.1",
@@ -46,13 +57,20 @@
     "grunt-nodemon": "0.4.1",
     "grunt-sass": "1.1.0",
     "http-proxy-middleware": "0.12.0",
-    "istanbul": "0.4.4",
-    "matchdep": "1.0.1",
-    "mocha": "2.2.5",
+    "istanbul": "^0.4.5",
+    "matchdep": "^1.0.1",
+    "mocha": "^3.3.0",
+    "node-sass": "^4.5.2",
     "nodemailer": "2.3.0",
-    "request": "2.69.0"
+    "nodemon": "^1.11.0",
+    "standard": "^10.0.2"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "app/components/"
+    ]
   }
 }

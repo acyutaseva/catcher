@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM node:6-alpine
 MAINTAINER "Dan Farrelly <daniel.j.farrelly@gmail.com>"
 
 ENV NODE_ENV production
@@ -8,16 +8,12 @@ WORKDIR /usr/src/app
 
 ADD package.json /usr/src/app/
 
-# do everything in one go (decrease overall image size)
-RUN apk add --no-cache nodejs &&\
-    apk add --no-cache --virtual build-dependencies python make g++ &&\
-    npm install && npm prune &&\
-    apk del build-dependencies &&\
-    rm -fr /root/.npm \
-           /root/.node-gyp \
-           /tmp/*
+RUN npm install && \
+    npm prune && \
+    npm cache clean \
+    rm -rf /tmp/*
 
-ADD . /usr/src/app
+ADD . /usr/src/app/
 
 EXPOSE 80 25
 

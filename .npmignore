@@ -1,10 +1,10 @@
-.git*
-assets/
-test/
-docs/
+assets
+coverage
+docs
+scripts
+!app/scripts
+test
 
-.nodemonignore
-.jshintrc
-.gitignore
-Gruntfile.js
-.travis.yml
+.*
+Dockerfile
+rules.json
