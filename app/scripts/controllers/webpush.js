@@ -31,7 +31,7 @@ app.controller('WebpushCtrl', [
     };
 
     function preview() {
-      navigator.serviceWorker.register('sw.js');
+      navigator.serviceWorker.register('/sw.js');
       navigator.serviceWorker.ready.then(function(registration) {
         registration.showNotification($scope.payload.title, $scope.payload);
       });
