@@ -438,9 +438,15 @@ code {
   background-repeat: no-repeat;
 }
 
-.webpush-content {
+.sms-content {
+  padding: 7px 16px;
+}
+
+.webpush-content,
+.push-content {
   .marvel-device.nexus5 {
-    height: 468px;
+    height: 580px;
+    width: 350px;
   }
 
   .desktop,
@@ -459,9 +465,11 @@ code {
   }
 
   .mobile {
-    transform: scale(0.8);
+    padding-top: 20px;
   }
+}
 
+.webpush-content {
   .desktop {
     padding-top: 50px;
     font-size: 12px;
@@ -608,6 +616,51 @@ code {
       &.with-image .main .body .content {
         -webkit-line-clamp: 1;
         max-height: 18px;
+      }
+    }
+  }
+}
+
+.push-content {
+  .marvel-device > .screen {
+    background-color: #152f3c;
+    background-image: url("/img/push-background.png");
+    background-size: cover;
+
+    .screen-content {
+      padding-top: 200px;
+      padding-left: 20px;
+      text-align: left;
+
+      .screen-content-push {
+        display: flex;
+      }
+
+      .icon {
+        width: 24px;
+        margin-right: 12px;
+      }
+
+      .title {
+        font-weight: bold;
+        padding-bottom: 5px;
+
+        .time {
+          padding-left: 3px;
+          font-size: 13px;
+          font-weight: normal;
+          opacity: 0.4;
+        }
+      }
+
+      .body {
+        padding-bottom: 20px;
+      }
+
+      .screen-content-separator {
+        opacity: 0.3;
+        padding: 10px;
+        border-top: 1px solid #fff;
       }
     }
   }

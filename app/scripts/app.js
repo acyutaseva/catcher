@@ -14,6 +14,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when('/webpush/:itemId', { templateUrl: 'views/webpush.html', controller: 'WebpushCtrl' })
     .when('/fbpage/:itemId', { templateUrl: 'views/fbpage.html', controller: 'FbpageCtrl' })
     .when('/sms/:itemId', { templateUrl: 'views/sms.html', controller: 'SmsCtrl' })
+    .when('/push/:itemId', { templateUrl: 'views/push.html', controller: 'PushCtrl' })
     .otherwise({ redirectTo: '/' })
 }])
 

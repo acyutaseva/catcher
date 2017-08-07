@@ -1,0 +1,48 @@
+<ul class="toolbar email-toolbar on-light">
+  <li>
+    <a href="" class=""
+      ng-click="show('json')"
+      ng-class="{ active: panelVisibility == 'json' }">
+        <i class="fa fa-code"></i>
+        Source
+    </a>
+  </li>
+  <li>
+    <a href="" class=""
+      ng-click="delete(item)">
+        <i class="fa fa-trash-o"></i>
+        Delete
+    </a>
+  </li>
+</ul>
+
+<div class="email-content push-content">
+    <div ng-hide=" panelVisibility != 'json' ">
+      <pre>{{payloadSrc | json}}</pre>
+    </div>
+
+    <!-- TODO: handle more than only title, body, and icon -->
+    <div ng-hide=" panelVisibility != 'mobile' " class="mobile">
+      <div class="marvel-device nexus5">
+        <div class="top-bar"></div>
+        <div class="sleep"></div>
+        <div class="volume"></div>
+        <div class="camera"></div>
+        <div class="screen">
+          <div class="screen-content">
+            <div class="screen-content-separator"></div>
+            <div class="screen-content-push">
+              <div>
+                <img ng-hide=" !payload.icon " class="icon" src="{{payload.icon}}" />
+              </div>
+              <div>
+                <div class="title">{{payload.title}} <span class="time">now</span></div>
+                <div class="body">{{payload.body}}</div>
+              </div>
+            </div>
+            <div class="screen-content-separator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
