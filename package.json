@@ -32,7 +32,7 @@
   },
   "main": "./index.js",
   "bin": {
-    "maildev": "./bin/maildev"
+    "notification-catcher": "./bin/maildev"
   },
   "license": "MIT",
   "dependencies": {
