@@ -358,13 +358,13 @@ var messages = [
 
   {
     from: '-',
-    to: '0670123456@fb.me',
-    subject: 'SMS T',
+    to: '+33670123456@sms',
+    subject: '[sms] The wax at the bank...',
+    text: 'The wax at the bank was surfer wax!!!',
     headers: {
       'X-type': 'sms',
-      'X-to': '06 70 12 34 56'
-    },
-    text: 'The wax at the bank was surfer wax!!!'
+      'X-to': '+33670123456'
+    }
   },
 
   // Plain text email

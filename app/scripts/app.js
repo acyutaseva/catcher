@@ -13,6 +13,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when('/email/:itemId', { templateUrl: 'views/item.html', controller: 'ItemCtrl' })
     .when('/webpush/:itemId', { templateUrl: 'views/webpush.html', controller: 'WebpushCtrl' })
     .when('/fbpage/:itemId', { templateUrl: 'views/fbpage.html', controller: 'FbpageCtrl' })
+    .when('/sms/:itemId', { templateUrl: 'views/sms.html', controller: 'SmsCtrl' })
     .otherwise({ redirectTo: '/' })
 }])
 
