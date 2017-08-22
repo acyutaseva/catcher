@@ -1,6 +1,6 @@
 # Notification Catcher
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=1.0.3&x2=0)](https://github.com/notifme/catcher)
+[![npm version](https://img.shields.io/npm/v/notification-catcher.svg?style=flat)](https://www.npmjs.com/package/notification-catcher)
 
 **Notification Catcher** is a simple way to test different kinds of notifications (emails, SMS, webpushs...) with an easy to use web interface that runs on your machine built on top of [Node.js](http://www.nodejs.org).
 
