@@ -424,6 +424,19 @@ const pushMessages = [
   }
 ];
 
+const slackMessages = [
+  {
+    to: 'public.channel@slack',
+    from: '-',
+    subject: 'Hello slack!',
+    text: 'Hello slack!',
+    headers: {
+      'X-type': 'slack',
+      'X-to': '[slack public channel]'
+    }
+  }
+];
+
 // Messages list
 var messages = []
   .concat(emailMessages)
@@ -431,6 +444,7 @@ var messages = []
   .concat(webpushesMessages)
   .concat(fbpagesMessages)
   .concat(pushMessages)
+  .concat(slackMessages)
 ;
 
 function sendEmails (logErrors) {

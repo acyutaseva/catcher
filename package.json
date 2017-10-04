@@ -8,6 +8,7 @@
     "webpush",
     "sms",
     "facebook",
+    "slack",
     "notification testing",
     "notification catcher",
     "e-mail",

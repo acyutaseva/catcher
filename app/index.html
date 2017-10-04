@@ -48,6 +48,7 @@
                                   }" aria-hidden="true"></i>
                                   <i class="material-icons" ng-show="item.headers['x-type'] == 'sms'">sms</i>
                                   <i class="material-icons" ng-show="item.headers['x-type'] == 'push'">tap_and_play</i>
+                                  <i class="fa fa-slack" ng-show="item.headers['x-type'] == 'slack'"></i>
                                   <i class="material-icons" ng-show="!item.headers['x-type']">mail</i>
                                 </div>
                                 <div style="flex:1;">
@@ -127,6 +128,7 @@
         <script src="scripts/controllers/fbpage.js"></script>
         <script src="scripts/controllers/sms.js"></script>
         <script src="scripts/controllers/push.js"></script>
+        <script src="scripts/controllers/slack.js"></script>
 
     </body>
 </html>

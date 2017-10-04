@@ -15,6 +15,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when('/fbpage/:itemId', { templateUrl: 'views/fbpage.html', controller: 'FbpageCtrl' })
     .when('/sms/:itemId', { templateUrl: 'views/sms.html', controller: 'SmsCtrl' })
     .when('/push/:itemId', { templateUrl: 'views/push.html', controller: 'PushCtrl' })
+    .when('/slack/:itemId', { templateUrl: 'views/slack.html', controller: 'SlackCtrl' })
     .otherwise({ redirectTo: '/' })
 }])
 
