@@ -437,6 +437,19 @@ const slackMessages = [
   }
 ];
 
+const voiceMessages = [
+  {
+    to: '+33670123456@voice',
+    from: '-',
+    subject: 'Hello voice!',
+    url: 'https://example.com/message.xml',
+    headers: {
+      'X-type': 'voice',
+      'X-to': '[voice] +33670123456'
+    }
+  }
+];
+
 // Messages list
 var messages = []
   .concat(emailMessages)
@@ -445,6 +458,7 @@ var messages = []
   .concat(fbpagesMessages)
   .concat(pushMessages)
   .concat(slackMessages)
+  .concat(voiceMessages)
 ;
 
 function sendEmails (logErrors) {

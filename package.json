@@ -9,6 +9,7 @@
     "sms",
     "facebook",
     "slack",
+    "voice",
     "notification testing",
     "notification catcher",
     "e-mail",

@@ -16,6 +16,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when('/sms/:itemId', { templateUrl: 'views/sms.html', controller: 'SmsCtrl' })
     .when('/push/:itemId', { templateUrl: 'views/push.html', controller: 'PushCtrl' })
     .when('/slack/:itemId', { templateUrl: 'views/slack.html', controller: 'SlackCtrl' })
+    .when('/voice/:itemId', { templateUrl: 'views/voice.html', controller: 'VoiceCtrl' })
     .otherwise({ redirectTo: '/' })
 }])
 
