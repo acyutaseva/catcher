@@ -6,8 +6,8 @@
 
 ## Install & Run
 
-    $ npm install -g notification-catcher
-    $ notification-catcher
+    $ npm install -g notification-catcher-v2
+    $ notification-catcher-v2
 
 ![Screenshot](https://www.notif.me/static/screenshots/notification-catcher.png)
 

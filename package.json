@@ -1,5 +1,5 @@
 {
-  "name": "notification-catcher",
+  "name": "notification-catcher-v2",
   "description": "Web Interface for reading and testing notifications during development",
   "version": "1.2.1",
   "keywords": [
@@ -33,39 +33,37 @@
     "css-watch": "node-sass -wr --output-style compressed -o app/styles assets/styles/style.scss"
   },
   "main": "./index.js",
-  "bin": {
-    "notification-catcher": "./bin/maildev"
-  },
+  "bin": "./bin/maildev",
   "license": "MIT",
   "dependencies": {
-    "async": "1.5.1",
-    "commander": "2.9.0",
-    "express": "4.13.4",
-    "mailparser": "0.6.2",
-    "open": "0.0.5",
-    "smtp-connection": "2.3.1",
-    "smtp-server": "1.16.1",
-    "socket.io": "1.7.3",
-    "wildstring": "1.0.8"
+    "async": "3.2.5",
+    "commander": "12.0.0",
+    "express": "4.18.2",
+    "mailparser": "3.6.7",
+    "open": "10.0.3",
+    "smtp-connection": "4.0.2",
+    "smtp-server": "3.13.2",
+    "socket.io": "4.7.4",
+    "wildstring": "1.0.9"
   },
   "devDependencies": {
-    "expect": "1.20.2",
-    "got": "^6.7.1",
-    "grunt": "0.4.5",
-    "grunt-cli": "^1.2.0",
-    "grunt-concurrent": "2.2.1",
-    "grunt-contrib-jshint": "1.0.0",
-    "grunt-contrib-watch": "1.0.0",
-    "grunt-nodemon": "0.4.1",
-    "grunt-sass": "1.1.0",
-    "http-proxy-middleware": "0.12.0",
+    "expect": "29.7.0",
+    "got": "^14.2.0",
+    "grunt": "1.6.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-concurrent": "3.0.0",
+    "grunt-contrib-jshint": "3.2.0",
+    "grunt-contrib-watch": "1.1.0",
+    "grunt-nodemon": "0.4.2",
+    "grunt-sass": "3.1.0",
+    "http-proxy-middleware": "2.0.6",
     "istanbul": "^0.4.5",
-    "matchdep": "^1.0.1",
-    "mocha": "^3.3.0",
-    "node-sass": "^4.5.2",
-    "nodemailer": "2.3.0",
-    "nodemon": "^1.11.0",
-    "standard": "^10.0.2"
+    "matchdep": "^2.0.0",
+    "mocha": "^10.3.0",
+    "node-sass": "^9.0.0",
+    "nodemailer": "6.9.9",
+    "nodemon": "^3.0.3",
+    "standard": "^17.1.0"
   },
   "engines": {
     "node": ">=4.0.0"

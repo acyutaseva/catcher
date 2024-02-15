@@ -6,16 +6,17 @@
  * Licensed under the MIT License.
  */
 
-const program = require('commander')
+const { Command } = require('commander');
 const async = require('async')
 const pkg = require('./package.json')
 const web = require('./lib/web')
 const mailserver = require('./lib/mailserver')
 const logger = require('./lib/logger')
 
+const program = new Command();
+
 module.exports = function (config) {
   const version = pkg.version
-
   if (!config) {
     // CLI
     config = program
@@ -57,10 +58,10 @@ module.exports = function (config) {
   mailserver.create(config.smtp, config.ip, config.incomingUser, config.incomingPass, config.hideExtensions)
 
   if (config.outgoingHost ||
-      config.outgoingPort ||
-      config.outgoingUser ||
-      config.outgoingPass ||
-      config.outgoingSecure) {
+    config.outgoingPort ||
+    config.outgoingUser ||
+    config.outgoingPass ||
+    config.outgoingSecure) {
     mailserver.setupOutgoing(
       config.outgoingHost,
       parseInt(config.outgoingPort),
@@ -88,7 +89,7 @@ module.exports = function (config) {
     mailserver.on('close', web.close)
   }
 
-  function shutdown () {
+  function shutdown() {
     logger.info(`Recieved shutdown signal, shutting down now...`)
     async.parallel([
       mailserver.close,
